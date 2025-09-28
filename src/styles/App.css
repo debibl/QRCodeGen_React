@@ -1,0 +1,142 @@
+:root {
+  --pink: #f5d2d2;
+  --yellow: #f8f7ba;
+  --green: #bde3c3;
+  --blue: #a3ccda;
+}
+
+body {
+  margin: 0;
+  width: 250px;
+  background-color: var(--yellow);
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-image: url('../assets/flowers.png');
+  background-repeat: space;
+}
+
+img.placeholder {
+  width: 130px;
+  height: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Baloo 2', sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+
+  img {
+    width: 35px;
+    height: auto;
+  }
+}
+
+h1 {
+  font-size: 36px;
+  color: var(--pink);
+  -webkit-text-stroke: 3px var(--blue);
+  paint-order: stroke fill;
+  margin: 0;
+}
+
+#qr-generator .qr-code {
+  border: 5px solid #a3ccda;
+  border-radius: 10px;
+  width: fit-content;
+
+  #react-qrcode-logo {
+    margin-bottom: -6px;
+    border-radius: 5px;
+  }
+}
+
+#qr-generator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    #url-input {
+      margin: 10px 0 5px 0;
+      border: 3px solid var(--blue);
+      border-radius: 10px;
+      padding: 5px;
+      width: 90%;
+    }
+  }
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--pink);
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding-inline: 10px;
+  font-family: inherit;
+  font-weight: 900;
+  color: var(--blue);
+  -webkit-text-stroke: 1px white;
+  paint-order: stroke fill;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+  }
+}
+
+.btn-download,
+.btn-generate {
+  font-size: 16px;
+  .lucide {
+    width: 17px;
+  }
+}
+
+div.btn-settings {
+  margin: 20px;
+
+  button {
+    font-size: 14px;
+    .lucide {
+      width: 15px;
+    }
+  }
+}
+
+.btn-back {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  width: -webkit-fill-available;
+  margin: 10px;
+
+  button {
+    font-size: 12px;
+    .lucide {
+      width: 13px;
+    }
+  }
+}
