@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "QRCodeGenReact",
+  "description": "",
+  "version": "1.0",
+  "icons": {
+    "128": "assets/icons/logo-camera.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "QRCodeReact"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "downloads"
+  ]
+}
