@@ -8,16 +8,18 @@ function App() {
   const [layout, setLayout] = useState(<HomePage />);
 
   const [settings, setSettings] = useState({
-    fgColor: '',
-    bgColor: '',
+    fgColor: '#000000',
+    bgColor: '#ffffff',
   });
 
   const submit = (formData) => {
     const fgColor = formData.get('fgColor');
+    const bgColor = formData.get('bgColor');
     setSettings((prevSettings) => {
       setSettings({
         ...prevSettings,
         fgColor: fgColor,
+        bgColor: bgColor,
       });
     });
   };
@@ -28,7 +30,13 @@ function App() {
     };
 
     if (pageClicked) {
-      setLayout(<SettingsPage handleClick={handleClick} submit={submit} />);
+      setLayout(
+        <SettingsPage
+          handleClick={handleClick}
+          submit={submit}
+          settings={settings}
+        />
+      );
     } else {
       setLayout(<HomePage handleClick={handleClick} settings={settings} />);
     }

@@ -1,21 +1,32 @@
-import { ArrowBigLeft } from 'lucide-react';
 export default function Settings(props) {
-
-
   return (
     <>
       <div className='btn-back'>
-        <button onClick={props.handleClick}>
-          <ArrowBigLeft />
-          Back
-        </button>
+        <button onClick={props.handleClick}>Back</button>
       </div>
 
-      <h1>Settings page!</h1>
-      <form action={props.submit}>
-        <input name='fgColor' />
-        <button onClick={props.handleClick} type='submit'>Save</button>
-      </form>
+      <section id='settings-page'>
+        <h1>Settings</h1>
+        <form className='settings' action={props.submit}>
+          <input
+            type='color'
+            name='fgColor'
+            defaultValue={props.settings.fgColor}
+          />
+          <input
+            type='color'
+            name='bgColor'
+            defaultValue={props.settings.bgColor}
+          />
+          <button
+            className='btn-save'
+            onClick={props.handleClick}
+            type='submit'
+          >
+            Save
+          </button>
+        </form>
+      </section>
     </>
   );
 }

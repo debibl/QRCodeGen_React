@@ -13,7 +13,6 @@ body {
   border-radius: 10px;
   box-sizing: border-box;
   background-image: url('../assets/flowers.png');
-  background-repeat: space;
 }
 
 img.placeholder {
@@ -82,10 +81,6 @@ h1 {
 }
 
 button {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5px;
   background-color: var(--pink);
   border: 2px solid var(--blue);
   border-radius: 10px;
@@ -110,19 +105,12 @@ button {
 .btn-download,
 .btn-generate {
   font-size: 16px;
-  .lucide {
-    width: 17px;
-  }
 }
 
 div.btn-settings {
   margin: 20px;
-
   button {
     font-size: 14px;
-    .lucide {
-      width: 15px;
-    }
   }
 }
 
@@ -135,8 +123,34 @@ div.btn-settings {
 
   button {
     font-size: 12px;
-    .lucide {
-      width: 13px;
+  }
+}
+
+section#settings-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: 30px;
+  width: -webkit-fill-available;
+
+  form.settings {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    input {
+      width: 100%;
+      border: 3px solid var(--blue);
+      border-radius: 10px;
+      height: 35px;
+    }
+
+    .btn-save {
+      margin: 15px;
+      font-size: 18px;
     }
   }
 }

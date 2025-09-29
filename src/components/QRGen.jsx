@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import { ScanQrCode, Download } from 'lucide-react';
 import { QRCode } from 'react-qrcode-logo';
 
 export default function QRGen(props) {
@@ -28,8 +27,8 @@ export default function QRGen(props) {
     <section id='qr-generator'>
       <section className={url && 'qr-code'}>
         {url ? (
-          <QRCode 
-            ref={qrRef} 
+          <QRCode
+            ref={qrRef}
             value={url}
             fgColor={props.settings?.fgColor || '#000000'}
             bgColor={props.settings?.bgColor || '#ffffff'}
@@ -40,13 +39,11 @@ export default function QRGen(props) {
       </section>
 
       <form action={submit}>
-        <input id='url-input' name='link' placeholder={url}/>
+        <input id='url-input' name='link' placeholder={url} />
         <button className='btn-generate' type='submit'>
-          <ScanQrCode />
           Generate
         </button>
         <button className='btn-download' onClick={handleDownload}>
-          <Download />
           Download
         </button>
       </form>

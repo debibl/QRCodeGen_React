@@ -1,5 +1,4 @@
 import QRGen from '../components/QRGen';
-import { Settings } from 'lucide-react';
 
 export default function HomePage(props) {
   return (
@@ -12,10 +11,7 @@ export default function HomePage(props) {
       <QRGen settings={props.settings} />
 
       <div className='btn-settings'>
-        <button onClick={props.handleClick}>
-          <Settings />
-          Settings
-        </button>
+        <button onClick={props.handleClick}>Settings</button>
       </div>
     </>
   );
