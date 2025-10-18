@@ -26,16 +26,27 @@ export default function QRGen(props) {
   return (
     <section id='qr-generator'>
       <section className={url && 'qr-code'}>
-        {url ? (
-          <QRCode
-            ref={qrRef}
-            value={url}
-            fgColor={props.settings?.fgColor || '#000000'}
-            bgColor={props.settings?.bgColor || '#ffffff'}
-          />
-        ) : (
-          <img className='placeholder' src='./assets/cat.png' alt='cat' />
-        )}
+        <div className='frame'>
+          {url ? (
+            <QRCode
+              ref={qrRef}
+              value={url}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+              }}
+              fgColor={props.settings?.fgColor || '#000000'}
+              bgColor={props.settings?.bgColor || '#ffffff'}
+              size={parseInt(props.settings?.size) || 150}
+              quietZone={parseInt(props.settings?.quietZone) || 10}
+              qrStyle={props.settings?.qrStyle || 'squares'}
+              ecLevel={props.settings?.ecLevel || 'M'}
+            />
+          ) : (
+            <img className='placeholder' src='./assets/cat.png' alt='cat' />
+          )}
+        </div>
       </section>
 
       <form action={submit}>

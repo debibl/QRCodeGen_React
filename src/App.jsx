@@ -10,18 +10,20 @@ function App() {
   const [settings, setSettings] = useState({
     fgColor: '#000000',
     bgColor: '#ffffff',
+    size: '150',
+    quietZone: '10',
+    qrStyle: 'squares',
+    ecLevel: 'M',
   });
 
   const submit = (formData) => {
-    const fgColor = formData.get('fgColor');
-    const bgColor = formData.get('bgColor');
-    setSettings((prevSettings) => {
-      setSettings({
-        ...prevSettings,
-        fgColor: fgColor,
-        bgColor: bgColor,
-      });
-    });
+    const data = {};
+
+    for (const [key, value] of formData) {
+      data[key] = value;
+    }
+
+    setSettings((prevSettings) => ({ ...prevSettings, ...data }));
   };
 
   useEffect(() => {

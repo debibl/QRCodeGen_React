@@ -13,6 +13,7 @@ body {
   border-radius: 10px;
   box-sizing: border-box;
   background-image: url('../assets/flowers.png');
+  background-repeat: space;
 }
 
 img.placeholder {
@@ -48,14 +49,22 @@ h1 {
   margin: 0;
 }
 
-#qr-generator .qr-code {
-  border: 5px solid #a3ccda;
-  border-radius: 10px;
-  width: fit-content;
+#qr-generator {
+  .qr-code {
+    border: 5px solid #a3ccda;
+    border-radius: 10px;
+    width: fit-content;
 
-  #react-qrcode-logo {
-    margin-bottom: -6px;
-    border-radius: 5px;
+    .frame {
+      width: 170px;
+      height: 170px;
+      overflow: hidden;
+    }
+
+    #react-qrcode-logo {
+      margin-bottom: -6px;
+      border-radius: 5px;
+    }
   }
 }
 
@@ -133,19 +142,45 @@ section#settings-page {
   margin-inline: 30px;
   width: -webkit-fill-available;
 
+  h1 {
+    margin: -10px;
+  }
+
   form.settings {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+
+    label {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--blue);
+      -webkit-text-stroke: 1px white;
+      paint-order: stroke fill;
+      align-self: flex-start;
+    }
 
     input {
       width: 100%;
       border: 3px solid var(--blue);
       border-radius: 10px;
-      height: 35px;
+      padding: 5px;
+      box-sizing: border-box;
+
+      &[type='color'] {
+        height: 35px;
+        padding: 0 5px;
+      }
+    }
+
+    select {
+      width: 100%;
+      border: 3px solid var(--blue);
+      border-radius: 10px;
+      padding: 5px;
+      box-sizing: border-box;
     }
 
     .btn-save {
